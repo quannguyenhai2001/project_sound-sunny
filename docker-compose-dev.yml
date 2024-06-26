@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  dependencies:
+    image: sound-sunny_dependencies
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: docker/Dockerfile.dependencies
+  builder:
+    image: sound-sunny_dependencies:builder
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: docker/Dockerfile.builder
+      args:
+        - ENV_FILE=.env.dev
+    networks:
+      - frontend
+  web:
+    image: sound-sunny_dependencies:frontend
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: docker/Dockerfile
+    ports:
+      - '11212:80'
+    networks:
+      - frontend
+networks:
+  frontend:
+    driver: bridge

@@ -1,0 +1,31 @@
+stages:
+  - deploy-staging
+  - deploy-prod
+
+deploy-staging:
+  stage: deploy-staging
+  script:
+    - sudo docker compose -f docker-compose-dev.yml build dependencies
+    - sudo docker compose -f docker-compose-dev.yml build builder
+    - sudo docker compose -f docker-compose-dev.yml build web
+    - sudo docker image prune -f
+    - sudo docker compose -f docker-compose-dev.yml up -d web
+  tags:
+    - staging-shell-vng-03-04-08
+  only:
+    - staging-test
+
+deploy-prod:
+  stage: deploy-prod
+  script:
+    - sudo docker compose -f docker-compose-prd.yml build dependencies
+    - sudo docker compose -f docker-compose-prd.yml build builder
+    - sudo docker compose -f docker-compose-prd.yml build web
+    - sudo docker image prune -f
+    - sudo docker compose -f docker-compose-prd.yml up -d web
+  tags:
+    - hrms-production-shell
+  environment: production-test
+  only:
+    - production-test
+  when: manual
