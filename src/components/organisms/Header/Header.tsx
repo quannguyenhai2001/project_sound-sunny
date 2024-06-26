@@ -1,4 +1,4 @@
-import { AppBar, Box, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
 import logo from '@/assets/logo/sound-cloud.png';
 import avatar from '@/assets/images/user-avatar.webp';
 import { useState } from 'react';
@@ -6,18 +6,31 @@ import useRouter from '@/routes/router-hook';
 import { ROUTE_PATH } from '@/constants/route-path.constant';
 import useAuth from '@/features/auth/hooks/useAuth';
 import { toast } from 'react-toastify';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import i18n from '@/locales/i18n';
 const Header = () => {
 	const { navigate } = useRouter();
 	const { signOut } = useAuth();
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const [anchorElFunc, setAnchorElFunc] = useState<null | HTMLElement>(null);
 
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorEl(anchorEl ? null : event.currentTarget);
 	};
-
+	const handleClickFunc = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorElFunc(anchorEl ? null : event.currentTarget);
+	};
+	const changeLanguageToEnglish = () => {
+		i18n.changeLanguage('en');
+	};
+	const changeLanguageToVietnamese = () => {
+		i18n.changeLanguage('vn');
+	};
 	const open = Boolean(anchorEl);
 	const id = open ? 'simple-popper' : undefined;
 
+	const openFunc = Boolean(anchorElFunc);
+	const idFunc = open ? 'simple-function-popper' : undefined;
 	const handleSignOut = async () => {
 		try {
 			toast('Đợi hệ thống trong giây lát ...', { type: 'warning' });
@@ -54,6 +67,65 @@ const Header = () => {
 						<img src={logo} alt='logo' />
 					</Box>
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+						<Box
+							sx={{
+								cursor: 'pointer',
+								'& img': {
+									width: '100%'
+								}
+							}}
+							onClick={handleClickFunc}
+						>
+							<Button sx={{ color: 'white' }} endIcon={<KeyboardArrowDownIcon />}>
+								Danh sách chức năng
+							</Button>
+							<Popper
+								id={idFunc}
+								open={openFunc}
+								anchorEl={anchorElFunc}
+								transition
+								placement='bottom-end'
+								sx={{
+									zIndex: 120111,
+									'&.base-Popper-root': {
+										top: '10rem'
+									}
+								}}
+							>
+								{({ TransitionProps }) => (
+									<Fade {...TransitionProps} timeout={100}>
+										<Paper>
+											<Typography
+												variant='body5'
+												onClick={() => changeLanguageToEnglish()}
+												sx={{
+													padding: '0.8rem 1.6rem',
+													'&:hover': {
+														backgroundColor: 'rgba(229, 243, 255, 1)',
+														cursor: 'pointer'
+													}
+												}}
+											>
+												Chuyển sang tiếng anh
+											</Typography>
+											<Typography
+												variant='body5'
+												sx={{
+													padding: '0.8rem 1.6rem',
+													'&:hover': {
+														backgroundColor: 'rgba(229, 243, 255, 1)',
+														cursor: 'pointer'
+													}
+												}}
+												onClick={() => changeLanguageToVietnamese()}
+											>
+												Chuyển sang tiếng việt
+											</Typography>
+										</Paper>
+									</Fade>
+								)}
+							</Popper>
+						</Box>
 						<Typography variant='body5' color='white'>
 							Nguyễn Hải Quân
 						</Typography>
@@ -74,9 +146,9 @@ const Header = () => {
 								transition
 								placement='bottom-end'
 								sx={{
-									zIndex: 1200,
+									zIndex: 120111,
 									'&.base-Popper-root': {
-										top: '1rem'
+										top: '10rem'
 									}
 								}}
 							>
