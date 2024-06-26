@@ -1,6 +1,6 @@
 import { AppBar, Box, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
-import logo from '@/assets/images/logo.png';
-import avatar from '@/assets/images/avatar.png';
+import logo from '@/assets/logo/sound-cloud.png';
+import avatar from '@/assets/images/user-avatar.webp';
 import { useState } from 'react';
 import useRouter from '@/routes/router-hook';
 import { ROUTE_PATH } from '@/constants/route-path.constant';
@@ -53,9 +53,9 @@ const Header = () => {
 					>
 						<img src={logo} alt='logo' />
 					</Box>
-					<Box sx={{ display: 'flex', alignItems: 'center' }}>
+					<Box sx={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
 						<Typography variant='body5' color='white'>
-							PHX Smart School
+							Nguyễn Hải Quân
 						</Typography>
 						<Box
 							sx={{
@@ -66,7 +66,7 @@ const Header = () => {
 							}}
 							onClick={handleClick}
 						>
-							<img src={avatar} alt='avatar' />
+							<img src={avatar} alt='avatar' width={32} height={32} />
 							<Popper
 								id={id}
 								open={open}
