@@ -13,8 +13,8 @@ import {
 } from '@mui/material';
 
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import theme from '@/themes/theme.main.ts';
 import { ControlType } from '@/types/common.types';
+import theme from '@/themes/theme.main';
 interface DataTableProps {
 	columns?: any;
 	data: any;

@@ -244,6 +244,7 @@ let theme = createTheme({
 		}
 	},
 	palette: {
+		mode: 'light',
 		primary: {
 			main: '#292D32',
 			light: '#F26522'
@@ -587,4 +588,34 @@ theme = createTheme(theme, {
 		}
 	}
 });
+
+// const darkTheme = createTheme({
+// 	...theme,
+// 	palette: {
+// 		mode: 'dark',
+// 		primary: {
+// 			main: '#f48fb1',
+// 			light: '#f48fb1'
+// 		},
+// 		secondary: {
+// 			main: '#f48fb1',
+// 			lightBlue: ' #C1D3F0',
+// 			Honeydew: '#f48fb1',
+// 			babyBlue: '#f48fb1',
+// 			peach: '#f48fb1',
+// 			apricot: ' #FDE7DD',
+// 			darkGreen: ' #016D2B',
+// 			darkRed: ' #D00000',
+// 			skyBlue: ' #15D5FF',
+// 			coral: ' #FF6060',
+// 			turquoise: ' #4DFFB4',
+// 			powderBlue: ' #C1D3F0',
+// 			tangerine: ' #FF8946'
+// 		},
+// 		background: {
+// 			default: '#303030',
+// 			paper: '#424242'
+// 		}
+// 	}
+// });
 export default theme;

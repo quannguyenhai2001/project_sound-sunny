@@ -18,7 +18,7 @@ const Header = () => {
 		setAnchorEl(anchorEl ? null : event.currentTarget);
 	};
 	const handleClickFunc = (event: React.MouseEvent<HTMLElement>) => {
-		setAnchorElFunc(anchorEl ? null : event.currentTarget);
+		setAnchorElFunc(anchorElFunc ? null : event.currentTarget);
 	};
 	const changeLanguageToEnglish = () => {
 		i18n.changeLanguage('en');
