@@ -10,9 +10,7 @@ import AUTH_ROUTES from '@/features/auth/routes/auth.routes';
 import ProtectedLayout from '@/components/layouts/ProtectedLayout/ProtectedLayout';
 
 // const RootRedirect = lazy(() => import('@/routes/RootRedirect'));
-const TotalRevenueScreen = lazy(
-	() => import('@/features/port-statistical/screens/TotalRevenueScreen/TotalRevenueScreen')
-);
+const HomeScreen = lazy(() => import('@/features/home/screens/HomeScreen/HomeScreen'));
 const NotFoundPage = lazy(() => import('@/components/organisms/NotFoundPage/NotFoundPage'));
 
 export const ROUTE_LIST: RouteItem[] = [
@@ -24,7 +22,7 @@ export const ROUTE_LIST: RouteItem[] = [
 		label: 'Root',
 		path: ROUTE_PATH.ROOT.INDEX,
 		layout: ProtectedLayout as FC,
-		component: TotalRevenueScreen as LazyExoticComponent<FC>
+		component: HomeScreen as LazyExoticComponent<FC>
 	},
 	{
 		label: 'Not Found',

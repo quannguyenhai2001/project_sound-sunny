@@ -2,6 +2,9 @@ export const ROUTE_PATH = {
 	ROOT: {
 		INDEX: '/'
 	},
+	HOME: {
+		INDEX: '/'
+	},
 	AUTH: {
 		SIGN_IN: '/sign-in'
 	},

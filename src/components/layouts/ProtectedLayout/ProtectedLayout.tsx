@@ -1,7 +1,7 @@
 import { Navigate, useOutlet } from 'react-router-dom';
 import { Box, Stack } from '@mui/material';
 import styles from './ProtectedLayout.module.css';
-// import SideBar from '@/components/organisms/SideBar/SideBar';
+import SideBar from '@/components/organisms/SideBar/SideBar';
 import Header from '@/components/organisms/Header/Header';
 import { ROUTE_PATH } from '@/constants/route-path.constant';
 import { memo } from 'react';
@@ -17,7 +17,7 @@ function ProtectedLayout() {
 
 	return (
 		<Box className={styles.container}>
-			{/* <SideBar /> */}
+			<SideBar />
 			<Stack
 				sx={{
 					width: '100%'
