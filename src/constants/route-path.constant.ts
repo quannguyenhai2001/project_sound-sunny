@@ -22,7 +22,9 @@ export const ROUTE_PATH = {
 	SETTING: {
 		INDEX: '/settings'
 	},
-
+	VISUAL: {
+		INDEX: '/visual'
+	},
 	NOTFOUND: {
 		INDEX: '*'
 	},

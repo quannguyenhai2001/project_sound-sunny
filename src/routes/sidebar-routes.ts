@@ -7,7 +7,14 @@ import gate from '@/assets/icons/gate.svg?react';
 export const sidebarRoutes = [
 	{
 		path: ROUTE_PATH.HOME.INDEX,
-		name: 'Trang chủ',
+		name: 'Home',
+		label: 'Home',
+		icon: gate,
+		children: null
+	},
+	{
+		path: ROUTE_PATH.VISUAL.INDEX,
+		name: 'Visual',
 		label: 'Home',
 		icon: gate,
 		children: null

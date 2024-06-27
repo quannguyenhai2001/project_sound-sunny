@@ -1,5 +1,5 @@
 import { AppBar, Box, Button, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
-import logo from '@/assets/logo/sound-cloud.png';
+// import logo from '@/assets/logo/sound-cloud.png';
 import avatar from '@/assets/images/user-avatar.webp';
 import { useState } from 'react';
 import useRouter from '@/routes/router-hook';
@@ -64,7 +64,7 @@ const Header = () => {
 						}}
 						onClick={() => navigate(ROUTE_PATH.PORT_STATISTICAL.TOTAL_REVENUE)}
 					>
-						<img src={logo} alt='logo' />
+						{/* <img src={logo} alt='logo' /> */}
 					</Box>
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
 						<Box
@@ -77,7 +77,7 @@ const Header = () => {
 							onClick={handleClickFunc}
 						>
 							<Button sx={{ color: 'white' }} endIcon={<KeyboardArrowDownIcon />}>
-								Danh sách chức năng
+								Function List
 							</Button>
 							<Popper
 								id={idFunc}
@@ -106,7 +106,7 @@ const Header = () => {
 													}
 												}}
 											>
-												Chuyển sang tiếng anh
+												Switch to English
 											</Typography>
 											<Typography
 												variant='body5'
@@ -119,7 +119,7 @@ const Header = () => {
 												}}
 												onClick={() => changeLanguageToVietnamese()}
 											>
-												Chuyển sang tiếng việt
+												Switch to Vietnamese
 											</Typography>
 										</Paper>
 									</Fade>
@@ -127,7 +127,7 @@ const Header = () => {
 							</Popper>
 						</Box>
 						<Typography variant='body5' color='white'>
-							Nguyễn Hải Quân
+							Hai Quan
 						</Typography>
 						<Box
 							sx={{

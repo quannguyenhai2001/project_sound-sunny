@@ -8,6 +8,7 @@ import PORT_STATISTICAL_ROUTES from '@/features/port-statistical/routes/port-sta
 import BlankLayout from '@/components/layouts/BlankLayout/BlankLayout';
 import AUTH_ROUTES from '@/features/auth/routes/auth.routes';
 import ProtectedLayout from '@/components/layouts/ProtectedLayout/ProtectedLayout';
+import VISUAL_ROUTES from '@/features/visual/routes/visual.routes';
 
 // const RootRedirect = lazy(() => import('@/routes/RootRedirect'));
 const HomeScreen = lazy(() => import('@/features/home/screens/HomeScreen/HomeScreen'));
@@ -18,6 +19,7 @@ export const ROUTE_LIST: RouteItem[] = [
 	...PORT_STATISTICAL_ROUTES,
 	...BILL_ROUTES,
 	...USER_ROUTES,
+	...VISUAL_ROUTES,
 	{
 		label: 'Root',
 		path: ROUTE_PATH.ROOT.INDEX,
