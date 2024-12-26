@@ -71,13 +71,12 @@ const DecentralizationInformation = () => {
 				marginBottom: '2.4rem'
 			}}
 		>
-			<Typography variant='title5' sx={{ display: 'block', marginBottom: '2.4rem' }}>
+			<Typography sx={{ display: 'block', marginBottom: '2.4rem' }} variant='title5'>
 				Thông tin phân quyền
 			</Typography>
 			<Box>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.4rem' }}>
 					<Tabs
-						value={selectedTab}
 						onChange={handleTabChange}
 						sx={{
 							'&.MuiTabs-root': {
@@ -91,47 +90,48 @@ const DecentralizationInformation = () => {
 								}
 							}
 						}}
+						value={selectedTab}
 					>
 						<Tab
-							label='Danh sách vai trò'
 							className={selectedTab === 0 ? classes.selectedTab : classes.unselectedTab}
+							label='Danh sách vai trò'
 						/>
 						<Tab
-							label='Danh sách thao tác'
 							className={selectedTab === 1 ? classes.selectedTab : classes.unselectedTab}
+							label='Danh sách thao tác'
 						/>
 						<Tab
-							label='Danh sách người dùng'
 							className={selectedTab === 2 ? classes.selectedTab : classes.unselectedTab}
+							label='Danh sách người dùng'
 						/>
 					</Tabs>
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: '1.6rem' }}>
 						<TextField
-							placeholder='Tìm kiếm'
-							variant='standard'
 							InputProps={{
 								startAdornment: <SearchIcon sx={{ marginRight: '0.8rem' }} />
 							}}
+							placeholder='Tìm kiếm'
+							variant='standard'
 						/>
 						<Button
 							startIcon={<AddIcon />}
-							variant='outlined'
 							sx={{
 								borderRadius: '2.4rem',
 								display: 'flex',
 								alignItems: 'normal'
 							}}
+							variant='outlined'
 						>
 							Thêm mới
 						</Button>
 					</Box>
 				</Box>
-				<RolesTab data={fakeData} columns={columns} />
+				<RolesTab columns={columns} data={fakeData} />
 				<Pagination
-					total={100}
-					page={2}
-					handleChangePage={() => {}}
 					customStyles={{ position: 'unset', mt: '2.4rem', display: 'flex', justifyContent: 'flex-end' }}
+					handleChangePage={() => {}}
+					page={2}
+					total={100}
 				/>
 			</Box>
 		</Box>

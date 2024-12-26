@@ -5,6 +5,9 @@ export const ROUTE_PATH = {
 	HOME: {
 		INDEX: '/'
 	},
+	TEST: {
+		INDEX: '/test'
+	},
 	AUTH: {
 		SIGN_IN: '/sign-in'
 	},
@@ -24,6 +27,10 @@ export const ROUTE_PATH = {
 	},
 	VISUAL: {
 		INDEX: '/visual'
+	},
+	GSAP: {
+		INDEX: '/gsap',
+		ZOOM_PARALLAX_EFFECT: '/gsap/zoom-parallax-effect'
 	},
 	NOTFOUND: {
 		INDEX: '*'

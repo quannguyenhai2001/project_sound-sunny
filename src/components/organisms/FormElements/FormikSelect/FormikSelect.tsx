@@ -24,7 +24,7 @@ const FormikSelect = ({
 	const errorText = get(errors, name);
 
 	return (
-		<FormControl sx={{ minWidth: 120 }} fullWidth={fullWidth}>
+		<FormControl fullWidth={fullWidth} sx={{ minWidth: 120 }}>
 			{label && (
 				<Typography mb={1} sx={sxPropsLabel}>
 					<label htmlFor={`label-${id || name}`}>{label}</label>
@@ -32,29 +32,29 @@ const FormikSelect = ({
 			)}
 
 			<Field
-				label=''
+				component={Select}
 				disabled={disableField}
 				displayEmpty={displayEmpty}
+				error={!!error}
+				id={id || name}
+				inputProps={{
+					name
+				}}
+				label=''
 				label_id={`label-${id || name}`}
-				component={Select}
+				name={name}
+				onBlur={handleBlur}
 				onChange={(e) => {
 					handleChange(e);
 					if (haveFunctionGoWithOnChange) {
 						functionsGoWithOnChange();
 					}
 				}}
-				onBlur={handleBlur}
-				id={id || name}
-				name={name}
-				variant={variant}
-				error={!!error}
 				value={get(values, name)}
-				inputProps={{
-					name
-				}}
+				variant={variant}
 				{...props}
 			>
-				<MenuItem value='' disabled={disableValuePlaceholder} selected>
+				<MenuItem disabled={disableValuePlaceholder} value='' selected>
 					<Typography>{placeholder}</Typography>
 				</MenuItem>
 				{options.map((option) => (

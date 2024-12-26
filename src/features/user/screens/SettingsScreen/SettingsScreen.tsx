@@ -6,9 +6,9 @@ import DecentralizationInformation from '../../components/cards/Decentralization
 const SettingsScreen = () => {
 	return (
 		<Box>
-			<HeaderTitle title='CÀI ĐẶT TÀI KHOẢN' customStyles={{ margin: '0 0 2.8rem 0' }} />
+			<HeaderTitle customStyles={{ margin: '0 0 2.8rem 0' }} title='CÀI ĐẶT TÀI KHOẢN' />
 			<Card sx={{ padding: '2.4rem', mb: '3.6rem' }}>
-				<Typography variant='title3' sx={{ marginBottom: '2.6rem' }}>
+				<Typography sx={{ marginBottom: '2.6rem' }} variant='title3'>
 					Thông tin tài khoản
 				</Typography>
 				<UserInformation />

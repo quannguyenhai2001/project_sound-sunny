@@ -23,9 +23,9 @@ const GroupStaticCard = () => {
 		}
 	];
 	return (
-		<Grid container spacing={3}>
+		<Grid spacing={3} container>
 			{data.map((item, index) => (
-				<Grid item md={4} key={index}>
+				<Grid key={index} md={4} item>
 					<StatisticalCard data={item} />
 				</Grid>
 			))}

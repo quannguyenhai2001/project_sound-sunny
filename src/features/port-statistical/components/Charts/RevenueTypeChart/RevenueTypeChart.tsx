@@ -62,7 +62,7 @@ export default function RevenueTypeChart() {
 							textAlign: 'center'
 						}}
 					>
-						<Typography variant='body2' sx={{ mb: '1.4rem' }}>
+						<Typography sx={{ mb: '1.4rem' }} variant='body2'>
 							{' '}
 							Tổng doanh thu
 						</Typography>
@@ -70,7 +70,7 @@ export default function RevenueTypeChart() {
 							<Typography variant='title2'>3.215.545.000 đ</Typography>
 						</Box>
 					</Box>
-					<Doughnut data={data} options={options} width={308} height={308} title='revenue type chart' />
+					<Doughnut data={data} height={308} options={options} title='revenue type chart' width={308} />
 				</Box>
 			</Box>
 			<Box
@@ -90,9 +90,9 @@ export default function RevenueTypeChart() {
 				}}
 			>
 				<Container maxWidth='lg' sx={{ mt: '0.4rem' }}>
-					<Grid container alignItems='center' rowSpacing='2rem' columnSpacing='1.6rem'>
+					<Grid alignItems='center' columnSpacing='1.6rem' rowSpacing='2rem' container>
 						{data.labels.map((label, index) => (
-							<Grid item md={6} key={label}>
+							<Grid key={label} md={6} item>
 								<Box sx={{ display: 'flex', alignItems: 'center' }}>
 									<span
 										style={{

@@ -35,14 +35,14 @@ const UserInformation = () => {
 				<Typography variant='title5'>Thông tin cá nhân</Typography>
 				{!isEditing ? (
 					<Button
+						onClick={() => setIsEditing(!isEditing)}
 						startIcon={<BorderColorIcon />}
-						variant='outlined'
 						sx={{
 							borderRadius: '2.4rem',
 							display: 'flex',
 							alignItems: 'normal'
 						}}
-						onClick={() => setIsEditing(!isEditing)}
+						variant='outlined'
 					>
 						Chỉnh sửa
 					</Button>
@@ -64,8 +64,8 @@ const UserInformation = () => {
 					>
 						<Formik
 							initialValues={initPersonalInformationEditFormValue}
-							validationSchema={PersonalInformationEditFormSchema}
 							onSubmit={() => {}}
+							validationSchema={PersonalInformationEditFormSchema}
 						>
 							{({ values, setFieldValue, handleBlur }) => (
 								<Form>
@@ -78,108 +78,108 @@ const UserInformation = () => {
 											}}
 										>
 											<CardMedia
-												component='img'
-												sx={{ width: '100%', height: '100%', borderRadius: '50%' }}
-												image={avatar}
 												alt='avatars'
+												component='img'
+												image={avatar}
+												sx={{ width: '100%', height: '100%', borderRadius: '50%' }}
 											/>
 										</Box>
 										<CardContent sx={{ padding: '0 10rem', width: '60%' }}>
 											<Box sx={{ mb: '1.6rem' }}>
-												<Typography variant='body2' sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }}>
+												<Typography sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 													Họ và tên
 												</Typography>
 												<FormikTextField
-													required
-													fullWidth
-													size='small'
-													variant='standard'
 													id='userName'
 													name='userName'
 													onBlur={(e) => {
 														handleBlur(e);
 														setFieldValue('userName', values.userName.trim(), true);
 													}}
+													size='small'
+													variant='standard'
+													fullWidth
+													required
 												/>
 											</Box>
 											<Stack
-												spacing={{ xs: 1, sm: 13 }}
 												direction='row'
-												justifyContent='space-between'
-												gap={4}
-												useFlexGap
 												flexWrap='wrap'
+												gap={4}
+												justifyContent='space-between'
+												spacing={{ xs: 1, sm: 13 }}
 												sx={{ width: '100%' }}
+												useFlexGap
 											>
 												<Box sx={{ width: '40%' }}>
 													<Box sx={{ mb: '1.6rem' }}>
-														<Typography variant='body2' sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }}>
+														<Typography sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 															Số điện thoại
 														</Typography>
 														<FormikTextField
-															required
-															fullWidth
-															size='small'
-															variant='standard'
 															id='phone'
 															name='phone'
 															onBlur={(e) => {
 																handleBlur(e);
 																setFieldValue('phone', values.phone.trim(), true);
 															}}
+															size='small'
+															variant='standard'
+															fullWidth
+															required
 														/>
 													</Box>
 													<Box sx={{ mb: '1.6rem' }}>
-														<Typography variant='body2' sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }}>
+														<Typography sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 															Địa điểm làm việc
 														</Typography>
 														<FormikTextField
-															required
-															fullWidth
-															size='small'
-															variant='standard'
 															id='workLocation'
 															name='workLocation'
 															onBlur={(e) => {
 																handleBlur(e);
 																setFieldValue('workLocation', values.workLocation.trim(), true);
 															}}
+															size='small'
+															variant='standard'
+															fullWidth
+															required
 														/>
 													</Box>
 												</Box>
 												<Box sx={{ width: '40%' }}>
 													<Box sx={{ mb: '1.6rem' }}>
-														<Typography variant='body2' sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }}>
+														<Typography sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 															Email
 														</Typography>
 														<FormikTextField
-															required
-															fullWidth
-															size='small'
-															variant='standard'
 															id='email'
 															name='email'
 															onBlur={(e) => {
 																handleBlur(e);
 																setFieldValue('email', values.email.trim(), true);
 															}}
+															size='small'
+															variant='standard'
+															fullWidth
+															required
 														/>
 													</Box>
 													<Box sx={{ mb: '1.6rem' }}>
-														<Typography variant='body2' sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }}>
+														<Typography sx={{ mb: '0.8rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 															Vai trò
 														</Typography>
 														<FormikTextField
-															required
-															fullWidth
-															size='small'
-															variant='standard'
 															id='role'
 															name='role'
 															onBlur={(e) => {
 																handleBlur(e);
 																setFieldValue('role', values.role.trim(), true);
 															}}
+															size='small'
+															variant='standard'
+															fullWidth
+															required
 														/>
 													</Box>
 												</Box>
@@ -188,25 +188,25 @@ const UserInformation = () => {
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '1.6rem' }}>
 										<Button
-											variant='outlined'
+											onClick={() => setIsEditing(!isEditing)}
 											sx={{
 												borderRadius: '2.4rem',
 												display: 'flex',
 												alignItems: 'normal'
 											}}
-											onClick={() => setIsEditing(!isEditing)}
+											variant='outlined'
 										>
 											Huỷ
 										</Button>
 
 										<Button
-											variant='contained'
+											onClick={() => setIsEditing(!isEditing)}
 											sx={{
 												borderRadius: '2.4rem',
 												display: 'flex',
 												alignItems: 'normal'
 											}}
-											onClick={() => setIsEditing(!isEditing)}
+											variant='contained'
 										>
 											Lưu
 										</Button>
@@ -239,54 +239,54 @@ const UserInformation = () => {
 								}}
 							>
 								<CardMedia
-									component='img'
-									sx={{ width: '100%', height: '100%', borderRadius: '50%' }}
-									image={avatar}
 									alt='avatars'
+									component='img'
+									image={avatar}
+									sx={{ width: '100%', height: '100%', borderRadius: '50%' }}
 								/>
 							</Box>
 							<CardContent sx={{ padding: '0 10rem' }}>
-								<Stack spacing={{ xs: 1, sm: 13 }} direction='row' gap={4} useFlexGap flexWrap='wrap'>
+								<Stack direction='row' flexWrap='wrap' gap={4} spacing={{ xs: 1, sm: 13 }} useFlexGap>
 									<Box>
 										<Box sx={{ mb: '1.6rem' }}>
-											<Typography variant='body2' sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }}>
+											<Typography sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 												Họ và tên
 											</Typography>
-											<Typography variant='body1' sx={{ fontFamily: 'Inter-Medium' }}>
+											<Typography sx={{ fontFamily: 'Inter-Medium' }} variant='body1'>
 												PHX Smart School
 											</Typography>
 										</Box>
 										<Box sx={{ mb: '1.6rem' }}>
-											<Typography variant='body2' sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }}>
+											<Typography sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 												Số điện thoại
 											</Typography>
-											<Typography variant='body1' sx={{ fontFamily: 'Inter-Medium' }}>
+											<Typography sx={{ fontFamily: 'Inter-Medium' }} variant='body1'>
 												012 345 678
 											</Typography>
 										</Box>
 										<Box sx={{ mb: '1.6rem' }}>
-											<Typography variant='body2' sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }}>
+											<Typography sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 												Địa điểm làm việc
 											</Typography>
-											<Typography variant='body1' sx={{ fontFamily: 'Inter-Medium' }}>
+											<Typography sx={{ fontFamily: 'Inter-Medium' }} variant='body1'>
 												PHX Group
 											</Typography>
 										</Box>
 									</Box>
 									<Box>
 										<Box sx={{ mb: '1.6rem' }}>
-											<Typography variant='body2' sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }}>
+											<Typography sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 												Email
 											</Typography>
-											<Typography variant='body1' sx={{ fontFamily: 'Inter-Medium' }}>
+											<Typography sx={{ fontFamily: 'Inter-Medium' }} variant='body1'>
 												phxsmart-school@gmail.com
 											</Typography>
 										</Box>
 										<Box sx={{ mb: '1.6rem' }}>
-											<Typography variant='body2' sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }}>
+											<Typography sx={{ mb: '1.2rem', color: 'rgba(173, 179, 189, 1)' }} variant='body2'>
 												Vai trò
 											</Typography>
-											<Typography variant='body1' sx={{ fontFamily: 'Inter-Medium' }}>
+											<Typography sx={{ fontFamily: 'Inter-Medium' }} variant='body1'>
 												Admin
 											</Typography>
 										</Box>

@@ -30,13 +30,13 @@ const StatisticalCard = ({ data }: StatisticalCardProps) => {
 				<Box className={classes.boxContent}>
 					<Box className={classes.icon}>
 						<Box>
-							<img src={data.icon} alt='icon' />
+							<img alt='icon' src={data.icon} />
 						</Box>
 					</Box>
 					<Box>
 						<Typography
-							variant='subbody2'
 							sx={{ color: '#868686', fontSize: '1.3rem', fontWeight: '550', mb: '1.4rem' }}
+							variant='subbody2'
 						>
 							{data.title}
 						</Typography>
@@ -54,7 +54,7 @@ const StatisticalCard = ({ data }: StatisticalCardProps) => {
 							}}
 						>
 							<Stonk />
-							<Typography variant='subbody1' component={'span'} sx={{ marginLeft: '0.5rem' }}>
+							<Typography component={'span'} sx={{ marginLeft: '0.5rem' }} variant='subbody1'>
 								10%
 							</Typography>
 						</Box>

@@ -96,7 +96,6 @@ const SideBar = () => {
 	return (
 		<Box>
 			<Drawer
-				variant='permanent'
 				open={open}
 				sx={{
 					'&.MuiDrawer-root': {
@@ -118,6 +117,7 @@ const SideBar = () => {
 						}
 					}
 				}}
+				variant='permanent'
 			>
 				<List
 					sx={{
@@ -129,7 +129,7 @@ const SideBar = () => {
 					{sidebarRoutes.map((primaryLevelItem) => {
 						return (
 							<Box key={primaryLevelItem.label}>
-								{primaryLevelItem.children && primaryLevelItem.children.length > 0 ? (
+								{primaryLevelItem.children && primaryLevelItem.children?.length > 0 ? (
 									<Accordion
 										expanded={expanded}
 										onChange={handleExpansion}
@@ -158,8 +158,8 @@ const SideBar = () => {
 										}}
 									>
 										<AccordionSummary
-											expandIcon={<ExpandMoreIcon />}
 											aria-controls='panel1-content'
+											expandIcon={<ExpandMoreIcon />}
 											id='panel1-header'
 											sx={{
 												'&.MuiAccordionSummary-root': {
@@ -219,6 +219,7 @@ const SideBar = () => {
 
 												<ListItemText
 													className={classes.itemTextRoot}
+													primary={primaryLevelItem.name}
 													sx={{
 														'& .MuiTypography-root': {
 															color: activeRoute?.path.includes(primaryLevelItem.path)
@@ -226,7 +227,6 @@ const SideBar = () => {
 																: 'rgba(114, 114, 114, 1)'
 														}
 													}}
-													primary={primaryLevelItem.name}
 												/>
 											</Box>
 										</AccordionSummary>
@@ -235,7 +235,6 @@ const SideBar = () => {
 												return (
 													<Box key={secondaryLevelItem.label} onClick={() => handleNavigate(secondaryLevelItem.path)}>
 														<ListItem
-															disablePadding
 															sx={{
 																display: 'block',
 																padding: '1.2rem 0.8rem 1.2rem 4.5rem',
@@ -249,6 +248,7 @@ const SideBar = () => {
 																	backgroundColor: 'white'
 																}
 															}}
+															disablePadding
 														>
 															<ListItemButton
 																className={classes.listItemRoot}
@@ -258,6 +258,8 @@ const SideBar = () => {
 															>
 																<Box sx={{ display: 'flex' }}>
 																	<ListItemText
+																		className={classes.itemTextRoot}
+																		primary={secondaryLevelItem.name}
 																		sx={{
 																			'& .MuiTypography-root': {
 																				color:
@@ -267,8 +269,6 @@ const SideBar = () => {
 																						: 'rgba(114, 114, 114, 1)'
 																			}
 																		}}
-																		className={classes.itemTextRoot}
-																		primary={secondaryLevelItem.name}
 																	/>
 																</Box>
 															</ListItemButton>
@@ -280,7 +280,7 @@ const SideBar = () => {
 									</Accordion>
 								) : (
 									<ListItem
-										disablePadding
+										onClick={() => handleNavigate(primaryLevelItem.path)}
 										sx={{
 											display: 'block',
 											padding: '1.2rem 0.8rem',
@@ -293,7 +293,7 @@ const SideBar = () => {
 												backgroundColor: 'white'
 											}
 										}}
-										onClick={() => handleNavigate(primaryLevelItem.path)}
+										disablePadding
 									>
 										<ListItemButton
 											className={classes.listItemRoot}
@@ -318,6 +318,8 @@ const SideBar = () => {
 													<primaryLevelItem.icon />
 												</ListItemIcon>
 												<ListItemText
+													className={classes.itemTextRoot}
+													primary={primaryLevelItem.name}
 													sx={{
 														'& .MuiTypography-root': {
 															color:
@@ -327,8 +329,6 @@ const SideBar = () => {
 																	: 'rgba(114, 114, 114, 1)'
 														}
 													}}
-													className={classes.itemTextRoot}
-													primary={primaryLevelItem.name}
 												/>
 											</Box>
 										</ListItemButton>

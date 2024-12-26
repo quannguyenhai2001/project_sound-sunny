@@ -39,10 +39,10 @@ const CSSFeaturesScreen = () => {
 	return (
 		<Box>
 			<Box className='topBox'>
-				<BackTitle title='VISUAL 1' customStyles={{ margin: 0 }} />
+				<BackTitle customStyles={{ margin: 0 }} title='VISUAL 1' />
 			</Box>
 			<Accordion sx={{ marginBottom: '1rem' }}>
-				<AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls='panel1-content' id='panel1-header'>
+				<AccordionSummary aria-controls='panel1-content' expandIcon={<ExpandMoreIcon />} id='panel1-header'>
 					- Visual 1.1
 				</AccordionSummary>
 				<AccordionDetails sx={{ overflow: 'auto', height: '80rem' }}>
@@ -55,7 +55,8 @@ const CSSFeaturesScreen = () => {
 							justifyContent: 'center',
 							transformStyle: 'preserve-3d',
 							perspective: '1000px',
-							mb: '5rem'
+							mb: '5rem',
+							marginTop: '5rem'
 						}}
 					>
 						{Array.from({ length: 6 }).map((_, index) => (
@@ -99,12 +100,12 @@ const CSSFeaturesScreen = () => {
 								}}
 							>
 								<CardActionArea>
-									<CardMedia component='img' height='200' image={cat} alt='cat' sx={{ objectFit: 'cover' }} />
+									<CardMedia alt='cat' component='img' height='200' image={cat} sx={{ objectFit: 'cover' }} />
 									<CardContent>
-										<Typography gutterBottom variant='h5' component='div'>
+										<Typography component='div' variant='h5' gutterBottom>
 											Lizard
 										</Typography>
-										<Typography variant='body2' color='text.secondary'>
+										<Typography color='text.secondary' variant='body2'>
 											Lizards are a widespread group of squamate reptiles
 										</Typography>
 									</CardContent>
@@ -128,7 +129,7 @@ const CSSFeaturesScreen = () => {
 				</AccordionDetails>
 			</Accordion>
 			<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-				<Joyride steps={steps} continuous={true} showSkipButton={true} showProgress={true} run={true} />
+				<Joyride continuous={true} run={true} showProgress={true} showSkipButton={true} steps={steps} />
 			</Box>
 		</Box>
 	);

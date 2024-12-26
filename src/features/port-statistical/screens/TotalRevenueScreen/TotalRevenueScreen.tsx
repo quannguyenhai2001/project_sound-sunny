@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
 const TotalRevenueScreen = () => {
-	return <Box>sds</Box>;
+	return <Box></Box>;
 };
 
 export default TotalRevenueScreen;

@@ -19,8 +19,10 @@ export default function LoadingLayout() {
 				cursor: 'wait'
 			}}
 		>
-			<Stack flexDirection='column' alignItems='center' spacing={2}>
+			<Stack alignItems='center' flexDirection='column' spacing={2}>
 				<img
+					loading='eager'
+					src={logo}
 					style={{
 						width: '60px',
 						animationName: 'rotateY',
@@ -28,8 +30,6 @@ export default function LoadingLayout() {
 						animationIterationCount: 'infinite',
 						position: 'relative'
 					}}
-					src={logo}
-					loading='eager'
 				/>
 				<BeatLoader color={theme.palette.secondary.main} loading={true} size={12} />
 			</Stack>

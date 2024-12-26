@@ -1,4 +1,4 @@
-import theme from '@/themes/theme.main';
+import theme from '@/themes/common.d';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles(() => ({

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import theme from '@/themes/common.d';
+import { ControlType } from '@/types/common.types';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import {
 	Box,
 	Button,
@@ -11,10 +13,8 @@ import {
 	TableRow,
 	Typography
 } from '@mui/material';
+import React, { useState } from 'react';
 
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { ControlType } from '@/types/common.types';
-import theme from '@/themes/theme.main';
 interface DataTableProps {
 	columns?: any;
 	data: any;
@@ -52,7 +52,10 @@ const DataTable: React.FC<DataTableProps> = ({ data = [], columns, options, cust
 				{isChecked && options.checkBox && options.checkBox.isShow && (
 					<>
 						<Button
-							variant='outlined'
+							color='error'
+							onClick={() => handleControl({ type: 'multipleDelete' })}
+							size='medium'
+							startIcon={<DeleteOutlineOutlinedIcon />}
 							sx={{
 								mb: '1rem',
 								display: 'flex',
@@ -61,10 +64,7 @@ const DataTable: React.FC<DataTableProps> = ({ data = [], columns, options, cust
 								// '&:hover': {},
 								// '&:focus': {}
 							}}
-							startIcon={<DeleteOutlineOutlinedIcon />}
-							size='medium'
-							color='error'
-							onClick={() => handleControl({ type: 'multipleDelete' })}
+							variant='outlined'
 						>
 							Xóa {selectedRows.length} mục đã chọn
 						</Button>
@@ -128,7 +128,7 @@ const DataTable: React.FC<DataTableProps> = ({ data = [], columns, options, cust
 							{columns.map((col: any, index: number) => {
 								return (
 									<TableCell key={index} align={col.align} sx={{ '&.MuiTableCell-root': { width: col.width * 1 } }}>
-										<Typography variant='body1' sx={{}}>
+										<Typography sx={{}} variant='body1'>
 											{col.title}
 										</Typography>
 									</TableCell>

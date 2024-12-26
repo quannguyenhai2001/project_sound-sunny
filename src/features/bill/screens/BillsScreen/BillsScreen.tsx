@@ -79,7 +79,7 @@ const BillsScreen = () => {
 			width: '120px',
 			render: () => (
 				<Box>
-					<Button variant='outlined' size='small'>
+					<Button size='small' variant='outlined'>
 						In hoá đơn
 					</Button>
 				</Box>
@@ -90,7 +90,7 @@ const BillsScreen = () => {
 	return (
 		<Box>
 			<Box className={classes.topBox}>
-				<HeaderTitle title='IN HOÁ ĐƠN' customStyles={{ margin: 0 }} />
+				<HeaderTitle customStyles={{ margin: 0 }} title='IN HOÁ ĐƠN' />
 				<DatePicker
 					className={classes.datePickerRoot}
 					// onChange={handleChange}
@@ -106,32 +106,32 @@ const BillsScreen = () => {
 			</Box>
 			<Box>
 				<TextField
-					placeholder='Tìm kiếm'
-					variant='outlined'
-					sx={{ width: '40rem' }}
-					size='small'
-					autoFocus
 					InputProps={{
 						endAdornment: <SearchIcon />
 					}}
+					placeholder='Tìm kiếm'
+					size='small'
+					sx={{ width: '40rem' }}
+					variant='outlined'
+					autoFocus
 				/>
 			</Box>
 			<Box sx={{ mt: '2.4rem' }}>
 				<DataTable
-					data={fakeData}
 					columns={columns}
-					options={{
-						checkBox: {
-							isShow: true
-						}
-					}}
 					customTableStyles={{
 						'&.MuiTableContainer-root': {
 							borderRadius: '1.2rem'
 						}
 					}}
+					data={fakeData}
+					options={{
+						checkBox: {
+							isShow: true
+						}
+					}}
 				/>
-				<Pagination total={100} page={1} handleChangePage={() => {}} />
+				<Pagination handleChangePage={() => {}} page={1} total={100} />
 			</Box>
 		</Box>
 	);

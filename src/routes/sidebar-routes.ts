@@ -1,8 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
-import { ROUTE_PATH } from '@/constants/route-path.constant';
-
 // import bill from '@/assets/icons/bill.svg?react';
 import gate from '@/assets/icons/gate.svg?react';
+import { ROUTE_PATH } from '@/constants/route-path.constant';
 
 export const sidebarRoutes = [
 	{
@@ -15,7 +14,7 @@ export const sidebarRoutes = [
 	{
 		path: ROUTE_PATH.VISUAL.INDEX,
 		name: 'Visual',
-		label: 'Home',
+		label: 'Visual',
 		icon: gate,
 		children: null
 	}

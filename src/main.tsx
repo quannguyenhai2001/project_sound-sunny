@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import App from './App.tsx';
-import './index.css';
+
 // let queues: any = [];
 // function onRenderCallback(id, phase, actualDuration, baseDuration, startTime, commitTime) {
 // 	// Save it

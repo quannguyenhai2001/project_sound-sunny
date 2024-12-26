@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.image {
+		mask-image: url(../assets/images/gsap/zoom-parallax-effect/o.png);
+		-webkit-mask-image: url(../assets/images/gsap/zoom-parallax-effect/o.png);
+		mask-position: center;
+		mask-repeat: no-repeat;
+		height: 100%;
+	}
+	.text-stroke {
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke-color: white;
+		-webkit-text-stroke-width: 2px;
+	}
+	.perspective {
+		perspective: 2200px;
+	}
+}

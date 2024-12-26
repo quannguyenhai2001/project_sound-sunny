@@ -22,13 +22,13 @@ const BackTitle = ({ title, customStyles: backTitleStyles }: Props) => {
 	return (
 		<Box sx={{ display: 'flex', alignItems: 'center', gap: '3.2rem', fontSize: '1.2rem', ...backTitleStyles }}>
 			<ArrowBackIosNewIcon
-				sx={{ cursor: 'pointer', marginBottom: '2.8rem' }}
 				ref={iconRef}
+				onClick={() => navigate(-1)}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
-				onClick={() => navigate(-1)}
+				sx={{ cursor: 'pointer', marginBottom: '2.8rem' }}
 			/>
-			<HeaderTitle title={title} customStyles={{ color: 'primary.main' }} />
+			<HeaderTitle customStyles={{ color: 'primary.main' }} title={title} />
 		</Box>
 	);
 };

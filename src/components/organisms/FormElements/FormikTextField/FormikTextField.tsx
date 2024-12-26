@@ -18,18 +18,18 @@ const FormikTextField = ({ label, id, name, variant = 'filled', disabled, ...pro
 
 	return (
 		<Field
-			disabled={disabled}
+			autoComplete='off'
 			component={TextField}
-			onChange={handleChange}
-			onBlur={handleBlur}
-			id={id || name}
-			name={name}
-			variant={variant}
+			disabled={disabled}
 			error={!!error}
 			helperText={error && errorText}
-			value={get(values, name) || ''}
-			autoComplete='off'
+			id={id || name}
 			label={label}
+			name={name}
+			onBlur={handleBlur}
+			onChange={handleChange}
+			value={get(values, name) || ''}
+			variant={variant}
 			{...props}
 		/>
 	);

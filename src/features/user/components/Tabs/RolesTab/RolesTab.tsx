@@ -8,13 +8,7 @@ const RolesTab = ({ data, columns }: StudentReportTabProps) => {
 	return (
 		<Box>
 			<DataTable
-				data={data}
 				columns={columns}
-				options={{
-					checkBox: {
-						isShow: true
-					}
-				}}
 				customTableStyles={{
 					'&.MuiBox-root': {
 						'& .MuiTableContainer-root': {
@@ -41,6 +35,12 @@ const RolesTab = ({ data, columns }: StudentReportTabProps) => {
 								}
 							}
 						}
+					}
+				}}
+				data={data}
+				options={{
+					checkBox: {
+						isShow: true
 					}
 				}}
 			/>

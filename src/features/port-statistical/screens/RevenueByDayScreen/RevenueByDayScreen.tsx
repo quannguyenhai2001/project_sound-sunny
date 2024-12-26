@@ -17,7 +17,7 @@ const RevenueByDayScreen = () => {
 					mb: '2.8rem'
 				}}
 			>
-				<BackTitle title='BÁO CÁO TỔNG DOANH THU' customStyles={{ margin: 0 }} />
+				<BackTitle customStyles={{ margin: 0 }} title='BÁO CÁO TỔNG DOANH THU' />
 				<Box sx={{ display: 'flex', gap: '1.6rem' }}>
 					<DatePicker
 						sx={{
@@ -29,7 +29,6 @@ const RevenueByDayScreen = () => {
 						}}
 					/>
 					<Button
-						variant='outlined'
 						size='small'
 						sx={{
 							color: '#1C6CEA',
@@ -43,6 +42,7 @@ const RevenueByDayScreen = () => {
 								color: '#1C6CEA'
 							}
 						}}
+						variant='outlined'
 					>
 						Xuất file
 					</Button>
@@ -52,28 +52,28 @@ const RevenueByDayScreen = () => {
 				<GroupStaticCard />
 			</Box>
 			<Box>
-				<Grid container spacing='3.2rem'>
-					<Grid item md={6}>
+				<Grid spacing='3.2rem' container>
+					<Grid md={6} item>
 						<Card
 							sx={{
 								padding: '2.4rem 1.6rem',
 								height: '57.8rem'
 							}}
 						>
-							<Typography variant='body1' sx={{ mb: '3.2rem' }}>
+							<Typography sx={{ mb: '3.2rem' }} variant='body1'>
 								Biểu đồ thống kê các loại doanh thu
 							</Typography>
 							<RevenueTypeChart />
 						</Card>
 					</Grid>
-					<Grid item md={6}>
+					<Grid md={6} item>
 						<Card
 							sx={{
 								padding: '3.2rem 2.4rem',
 								height: '57.8rem'
 							}}
 						>
-							<Typography variant='body1' sx={{ mb: '3.2rem' }}>
+							<Typography sx={{ mb: '3.2rem' }} variant='body1'>
 								Doanh thu cổng
 							</Typography>
 							<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: '2.4rem' }}>
@@ -116,18 +116,18 @@ const RevenueByDayScreen = () => {
 											</Box>
 											<Typography variant='body1'>Máy thanh toán tiền mặt 1</Typography>
 										</Box>
-										<Typography variant='body1' sx={{ fontSize: '1.6rem' }}>
+										<Typography sx={{ fontSize: '1.6rem' }} variant='body1'>
 											560.848.000 đ
 										</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu tiền mặt
 										</Typography>
 										<Typography variant='body2'>300.230.000 đ</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu chuyển khoản
 										</Typography>
 										<Typography variant='body2'>100.109.000 đ</Typography>
@@ -148,18 +148,18 @@ const RevenueByDayScreen = () => {
 											</Box>
 											<Typography variant='body1'>Máy thanh toán tiền mặt 2</Typography>
 										</Box>
-										<Typography variant='body1' sx={{ fontSize: '1.6rem' }}>
+										<Typography sx={{ fontSize: '1.6rem' }} variant='body1'>
 											560.848.000 đ
 										</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu tiền mặt
 										</Typography>
 										<Typography variant='body2'>300.230.000 đ</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu chuyển khoản
 										</Typography>
 										<Typography variant='body2'>100.109.000 đ</Typography>
@@ -180,18 +180,18 @@ const RevenueByDayScreen = () => {
 											</Box>
 											<Typography variant='body1'>Máy thanh toán tiền mặt 3</Typography>
 										</Box>
-										<Typography variant='body1' sx={{ fontSize: '1.6rem' }}>
+										<Typography sx={{ fontSize: '1.6rem' }} variant='body1'>
 											560.848.000 đ
 										</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu tiền mặt
 										</Typography>
 										<Typography variant='body2'>300.230.000 đ</Typography>
 									</Box>
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '2.4rem' }}>
-										<Typography variant='body2' sx={{ ml: '1rem' }}>
+										<Typography sx={{ ml: '1rem' }} variant='body2'>
 											Doanh thu chuyển khoản
 										</Typography>
 										<Typography variant='body2'>100.109.000 đ</Typography>

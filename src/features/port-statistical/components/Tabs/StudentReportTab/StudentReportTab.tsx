@@ -29,9 +29,8 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 			>
 				{!isOpenSearch ? (
 					<Button
-						variant='outlined'
-						size='small'
 						onClick={() => setIsOpenSearch(true)}
+						size='small'
 						sx={{
 							color: 'rgba(155, 155, 155, 1)',
 							border: '1px solid #C6C6C6',
@@ -40,6 +39,7 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 								border: '1px solid #C6C6C6'
 							}
 						}}
+						variant='outlined'
 					>
 						<Box sx={{ display: 'flex', gap: '1.6rem' }}>
 							<SearchIcon />
@@ -50,19 +50,18 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 					<Fade in={isOpenSearch}>
 						<Box sx={{ display: 'grid', width: '100%', gridTemplateColumns: '10fr 1fr', gap: '1.6rem' }}>
 							<TextField
-								fullWidth
-								placeholder='Tìm kiếm'
-								variant='outlined'
-								size='small'
-								autoFocus
 								InputProps={{
 									startAdornment: <SearchIcon sx={{ marginRight: '0.8rem' }} />
 								}}
+								placeholder='Tìm kiếm'
+								size='small'
+								variant='outlined'
+								autoFocus
+								fullWidth
 							/>
 							<Button
-								variant='outlined'
-								size='small'
 								onClick={() => setIsOpenSearch(false)}
+								size='small'
 								sx={{
 									'&.MuiButtonBase-root': {
 										color: 'black',
@@ -73,6 +72,7 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 										}
 									}
 								}}
+								variant='outlined'
 							>
 								Huỷ bỏ
 							</Button>
@@ -81,7 +81,6 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 				)}
 			</Card>
 			<DataTable
-				data={data}
 				columns={columns}
 				customTableStyles={{
 					'&.MuiBox-root': {
@@ -108,6 +107,7 @@ const StudentReportTab = ({ data, columns }: StudentReportTabProps) => {
 						}
 					}
 				}}
+				data={data}
 			/>
 		</Box>
 	);

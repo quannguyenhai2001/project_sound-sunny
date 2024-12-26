@@ -22,12 +22,6 @@ const SearchInput = ({ handleSearch, customStyles }: SearchInputProps) => {
 		<>
 			<OutlinedInput
 				className={classes.searchInputRoot}
-				sx={customStyles}
-				id='outlined-adornment-amount'
-				placeholder='Tìm kiếm'
-				value={searchTerm}
-				onChange={handleSearchChange}
-				onKeyDown={handleKeyPress}
 				endAdornment={
 					<InputAdornment position='end'>
 						<IconButton aria-label='toggle password visibility' edge='end'>
@@ -35,6 +29,12 @@ const SearchInput = ({ handleSearch, customStyles }: SearchInputProps) => {
 						</IconButton>
 					</InputAdornment>
 				}
+				id='outlined-adornment-amount'
+				onChange={handleSearchChange}
+				onKeyDown={handleKeyPress}
+				placeholder='Tìm kiếm'
+				sx={customStyles}
+				value={searchTerm}
 			/>
 		</>
 	);

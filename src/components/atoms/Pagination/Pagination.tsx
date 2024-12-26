@@ -1,6 +1,6 @@
-import React from 'react';
+import theme from '@/themes/common.d';
 import { Box, Pagination as MuiPagination } from '@mui/material';
-import theme from '@/themes/theme.main';
+import React from 'react';
 
 type PaginationProps = {
 	page: number;
@@ -37,7 +37,7 @@ function Pagination({ page, total, handleChangePage, customStyles }: PaginationP
 				...customStyles
 			}}
 		>
-			<MuiPagination count={total} page={page} onChange={handleChangePage} />
+			<MuiPagination count={total} onChange={handleChangePage} page={page} />
 		</Box>
 	);
 }

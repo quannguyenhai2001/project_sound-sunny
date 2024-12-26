@@ -34,7 +34,6 @@ const SignInScreen = () => {
 		<Box>
 			<Grid container>
 				<Grid
-					item
 					md={3.5}
 					sx={{
 						placeItems: 'center',
@@ -42,66 +41,67 @@ const SignInScreen = () => {
 						padding: '0 6rem',
 						height: '100vh'
 					}}
+					item
 				>
 					<Box>
 						<HeaderTitle
-							title='Đăng nhập hệ thống'
 							customStyles={{
 								marginBottom: '2.8rem',
 								'& .MuiTypography-root': {
 									color: 'black'
 								}
 							}}
+							title='Đăng nhập hệ thống'
 						/>
 						<Formik
 							initialValues={initLoginFormValue}
-							validationSchema={LoginFormSchema}
 							onSubmit={(values: SignInRequestBody) => {
 								handleSubmit(values);
 							}}
+							validationSchema={LoginFormSchema}
 						>
 							{({ values, setFieldValue, handleBlur, isValid }) => (
 								<Form>
 									<FormikTextField
-										required
-										fullWidth
-										size='small'
-										variant='outlined'
 										id='account'
 										label='Tài khoản'
 										name='account'
-										placeholder='Nhập tài khoản'
 										onBlur={(e) => {
 											handleBlur(e);
 											setFieldValue('account', values.account.trim(), true);
 										}}
+										placeholder='Nhập tài khoản'
+										size='small'
 										sx={{ marginBottom: '3.6rem' }}
+										variant='outlined'
+										fullWidth
+										required
 									/>
 									<FormikTextField
-										required
-										fullWidth
-										size='small'
-										variant='outlined'
-										name='password'
-										label='Mật khẩu'
-										placeholder='Nhập mật khẩu'
 										id='password'
-										type={'password'}
+										label='Mật khẩu'
+										name='password'
+										placeholder='Nhập mật khẩu'
+										size='small'
 										sx={{ marginBottom: '3.6rem' }}
+										type={'password'}
+										variant='outlined'
+										fullWidth
+										required
 									/>
 
 									<LoadingButton
-										fullWidth
-										variant='contained'
 										disabled={!isValid}
-										type='submit'
+										loading={isPendingSignIn}
 										sx={{
 											background: 'black',
 											'&:hover': {
 												background: 'black'
 											}
 										}}
-										loading={isPendingSignIn}
+										type='submit'
+										variant='contained'
+										fullWidth
 									>
 										Đăng nhập
 									</LoadingButton>
@@ -110,7 +110,7 @@ const SignInScreen = () => {
 						</Formik>
 					</Box>
 				</Grid>
-				<Grid item md={8.5}>
+				<Grid md={8.5} item>
 					<Box
 						sx={{
 							height: '100vh',
@@ -121,7 +121,7 @@ const SignInScreen = () => {
 							}
 						}}
 					>
-						<img src={bg} alt='logo' />
+						<img alt='logo' src={bg} />
 					</Box>
 				</Grid>
 			</Grid>

@@ -1,13 +1,14 @@
-import { AppBar, Box, Button, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
 // import logo from '@/assets/logo/sound-cloud.png';
 import avatar from '@/assets/images/user-avatar.webp';
-import { useState } from 'react';
-import useRouter from '@/routes/router-hook';
 import { ROUTE_PATH } from '@/constants/route-path.constant';
 import useAuth from '@/features/auth/hooks/useAuth';
-import { toast } from 'react-toastify';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import i18n from '@/locales/i18n';
+import useRouter from '@/routes/router-hook';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { AppBar, Box, Button, Fade, Paper, Popper, Toolbar, Typography } from '@mui/material';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+
 const Header = () => {
 	const { navigate } = useRouter();
 	const { signOut } = useAuth();
@@ -55,6 +56,7 @@ const Header = () => {
 			<Toolbar>
 				<Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
 					<Box
+						onClick={() => navigate(ROUTE_PATH.PORT_STATISTICAL.TOTAL_REVENUE)}
 						sx={{
 							width: '14.4rem',
 							cursor: 'pointer',
@@ -62,28 +64,26 @@ const Header = () => {
 								width: '100%'
 							}
 						}}
-						onClick={() => navigate(ROUTE_PATH.PORT_STATISTICAL.TOTAL_REVENUE)}
 					>
 						{/* <img src={logo} alt='logo' /> */}
 					</Box>
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
 						<Box
+							onClick={handleClickFunc}
 							sx={{
 								cursor: 'pointer',
 								'& img': {
 									width: '100%'
 								}
 							}}
-							onClick={handleClickFunc}
 						>
-							<Button sx={{ color: 'white' }} endIcon={<KeyboardArrowDownIcon />}>
+							<Button endIcon={<KeyboardArrowDownIcon />} sx={{ color: 'white' }}>
 								Function List
 							</Button>
 							<Popper
+								anchorEl={anchorElFunc}
 								id={idFunc}
 								open={openFunc}
-								anchorEl={anchorElFunc}
-								transition
 								placement='bottom-end'
 								sx={{
 									zIndex: 120111,
@@ -91,12 +91,12 @@ const Header = () => {
 										top: '10rem'
 									}
 								}}
+								transition
 							>
 								{({ TransitionProps }) => (
 									<Fade {...TransitionProps} timeout={100}>
 										<Paper>
 											<Typography
-												variant='body5'
 												onClick={() => changeLanguageToEnglish()}
 												sx={{
 													padding: '0.8rem 1.6rem',
@@ -105,11 +105,12 @@ const Header = () => {
 														cursor: 'pointer'
 													}
 												}}
+												variant='body5'
 											>
 												Switch to English
 											</Typography>
 											<Typography
-												variant='body5'
+												onClick={() => changeLanguageToVietnamese()}
 												sx={{
 													padding: '0.8rem 1.6rem',
 													'&:hover': {
@@ -117,7 +118,7 @@ const Header = () => {
 														cursor: 'pointer'
 													}
 												}}
-												onClick={() => changeLanguageToVietnamese()}
+												variant='body5'
 											>
 												Switch to Vietnamese
 											</Typography>
@@ -126,24 +127,23 @@ const Header = () => {
 								)}
 							</Popper>
 						</Box>
-						<Typography variant='body5' color='white'>
+						<Typography color='white' variant='body5'>
 							Hai Quan
 						</Typography>
 						<Box
+							onClick={handleClick}
 							sx={{
 								cursor: 'pointer',
 								'& img': {
 									width: '100%'
 								}
 							}}
-							onClick={handleClick}
 						>
-							<img src={avatar} alt='avatar' width={32} height={32} />
+							<img alt='avatar' style={{ borderRadius: '50%', width: '3.2rem' }} src={avatar} />
 							<Popper
+								anchorEl={anchorEl}
 								id={id}
 								open={open}
-								anchorEl={anchorEl}
-								transition
 								placement='bottom-end'
 								sx={{
 									zIndex: 120111,
@@ -151,12 +151,12 @@ const Header = () => {
 										top: '10rem'
 									}
 								}}
+								transition
 							>
 								{({ TransitionProps }) => (
 									<Fade {...TransitionProps} timeout={100}>
 										<Paper>
 											<Typography
-												variant='body5'
 												onClick={() => navigate(ROUTE_PATH.SETTING.INDEX)}
 												sx={{
 													padding: '0.8rem 1.6rem',
@@ -165,11 +165,12 @@ const Header = () => {
 														cursor: 'pointer'
 													}
 												}}
+												variant='body5'
 											>
 												Cài đặt
 											</Typography>
 											<Typography
-												variant='body5'
+												onClick={handleSignOut}
 												sx={{
 													padding: '0.8rem 1.6rem',
 													'&:hover': {
@@ -177,7 +178,7 @@ const Header = () => {
 														cursor: 'pointer'
 													}
 												}}
-												onClick={handleSignOut}
+												variant='body5'
 											>
 												Đăng xuất
 											</Typography>

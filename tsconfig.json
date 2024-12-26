@@ -3,7 +3,6 @@
 		"module": "ESNext",
 		"target": "ESNext",
 		"lib": ["dom", "dom.iterable", "esnext"],
-
 		"allowJs": false,
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,

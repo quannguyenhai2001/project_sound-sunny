@@ -1,51 +1,41 @@
-import { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingIndicator from '@/components/atoms/Loading';
-import { ROUTE_LIST } from './router-path';
 import { isRouteItemDef } from '@/helpers/types.helpers';
+import { Suspense } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-const AppRoutes = () => {
-	return (
-		<Router>
-			<Routes>
-				{ROUTE_LIST.map((route) => {
-					if (route.children) {
-						return (
-							<Route key={route.label} path={route.path} element={<route.layout />}>
-								{route.children.map((item) => {
-									return (
-										<Route
-											key={item.label}
-											path={item.path}
-											element={
-												<Suspense fallback={<LoadingIndicator />}>
-													<item.component />
-												</Suspense>
-											}
-										/>
-									);
-								})}
-							</Route>
-						);
-					}
-					return (
-						<Route key={route.label} element={<route.layout />}>
-							<Route
-								path={route.path}
-								element={
-									isRouteItemDef(route) ? (
-										<Suspense fallback={<LoadingIndicator />}>
-											<route.component />
-										</Suspense>
-									) : null
-								}
-							/>
-						</Route>
-					);
-				})}
-			</Routes>
-		</Router>
-	);
-};
+import { ROUTE_LIST } from './router-path';
+
+const AppRoutes = () => (
+	<Router>
+		<Routes>
+			{ROUTE_LIST.map((route) => (
+				<Route key={route.label} element={<route.layout />} path={route.path}>
+					{route.children?.map((item) => (
+						<Route
+							key={item.label}
+							element={
+								<Suspense fallback={<LoadingIndicator />}>
+									<item.component />
+								</Suspense>
+							}
+							path={item.path}
+						/>
+					)) || (
+						<Route
+							element={
+								isRouteItemDef(route) ? (
+									<Suspense fallback={<LoadingIndicator />}>
+										<route.component />
+									</Suspense>
+								) : null
+							}
+							path={route.path}
+						/>
+					)}
+				</Route>
+			))}
+		</Routes>
+	</Router>
+);
 
 export default AppRoutes;

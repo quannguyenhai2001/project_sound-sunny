@@ -133,14 +133,14 @@ const StudentReportScreen = () => {
 		<Box>
 			<BackTitle title='BÁO CÁO HỌC SINH' />
 			<Box>
-				<Tabs value={selectedTab} onChange={handleTabChange} className={classes.tabsRoot}>
-					<Tab label='Tất cả' className={selectedTab === 0 ? classes.selectedTab : classes.unselectedTab} />
-					<Tab label='Vé ngày' className={selectedTab === 1 ? classes.selectedTab : classes.unselectedTab} />
-					<Tab label='Vé tháng' className={selectedTab === 2 ? classes.selectedTab : classes.unselectedTab} />
-					<Tab label='Nợ tiền' className={selectedTab === 3 ? classes.selectedTab : classes.unselectedTab} />
+				<Tabs className={classes.tabsRoot} onChange={handleTabChange} value={selectedTab}>
+					<Tab className={selectedTab === 0 ? classes.selectedTab : classes.unselectedTab} label='Tất cả' />
+					<Tab className={selectedTab === 1 ? classes.selectedTab : classes.unselectedTab} label='Vé ngày' />
+					<Tab className={selectedTab === 2 ? classes.selectedTab : classes.unselectedTab} label='Vé tháng' />
+					<Tab className={selectedTab === 3 ? classes.selectedTab : classes.unselectedTab} label='Nợ tiền' />
 				</Tabs>
-				<StudentReportTab data={fakeData} columns={columns} />
-				<Pagination total={100} page={1} handleChangePage={() => {}} />
+				<StudentReportTab columns={columns} data={fakeData} />
+				<Pagination handleChangePage={() => {}} page={1} total={100} />
 			</Box>
 		</Box>
 	);
